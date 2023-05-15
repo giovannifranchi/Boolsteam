@@ -16,15 +16,14 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->string('game');
+            $table->text('thumb')->nullable();
             $table->text('game_link')->nullable();
             $table->date('release_date');
             $table->string('genre', 50);
             $table->string('dev', 100);
             $table->text('dev_link')->nullable();
             $table->string('publisher');
-            $table->text('publisher_link')->nullable();
             $table->string('platform',30);
-            $table->text('platform_link')->nullable();
             $table->text('description')->nullable();
             $table->float('score', 3,1);
             $table->text('review')->nullable();
