@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\GameRequest;
 use App\Models\Game;
 use Illuminate\Http\Request;
+
 
 class GameController extends Controller
 {
@@ -79,7 +81,7 @@ class GameController extends Controller
      */
     public function update(GameRequest $request, Game $game)
     {
-        $game->update($request);
+        $game->update(compact('request'));
         return to_route('games.index');
     }
 
