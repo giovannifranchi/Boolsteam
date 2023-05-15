@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Game;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,23 @@ class GamesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $games = config('games');
+
+        foreach($games as $game) {
+
+            $newGame = new Game();
+
+            $newGame->game = $game['title'];
+            $newGame->game_link = $game['game_url'];
+            $newGame->thumb = $game['thumbnail'];
+            $newGame->description = $game['short_description'];
+            $newGame->genre = $game['genre'];
+            $newGame->platform = $game['platform'];
+            $newGame->publisher = $game['publisher'];
+            $newGame->dev = $game['developer'];
+            $newGame->release_date = $game['release_date'];
+
+            $newGame->save();
+        }
     }
 }
