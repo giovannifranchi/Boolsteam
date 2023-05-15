@@ -1,16 +1,19 @@
 DATABASE VIDEOGAME TABLE INFO:
 
--game -> varchar;
--gameLink -> text/nullable;
--year -> year;
+-title -> varchar;
+-thumbnail -> text;
+-short_description -> text;
+-game_url -> text/nullable;
 -genre -> varchar(50);
--dev -> varchar(100);
--devLink -> text/nullable;
--publisher -> varchar;
--publisherLink -> text/nullable;
 -platform -> varchar(30);
+-publisher -> varchar;
+-developer -> varchar(100);
+-release_date -> date;
+
+
+-devLink -> text/nullable;
+-publisherLink -> text/nullable;
 -platformLink -> text;
--description -> text/nullable;
 -score -> float(3,1)/nullable;
 -review -> text/nullable; 
 -pegi -> tinyint(21)/nullable;
