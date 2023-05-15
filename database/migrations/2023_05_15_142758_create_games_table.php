@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('publisher');
             $table->string('platform',30);
             $table->text('description')->nullable();
-            $table->float('score', 3,1);
+            $table->float('score', 3,1)->nullable();
             $table->text('review')->nullable();
             $table->tinyInteger('pegi')->nullable();
             $table->timestamps();
