@@ -13,7 +13,7 @@ DATABASE VIDEOGAME TABLE INFO:
 
 -devLink -> text/nullable;
 -publisherLink -> text/nullable;
--platformLink -> text;
+-platformLink -> text/nullable;
 -score -> float(3,1)/nullable;
 -review -> text/nullable; 
 -pegi -> tinyint(21)/nullable;
