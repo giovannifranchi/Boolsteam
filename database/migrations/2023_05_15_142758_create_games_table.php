@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('game');
             $table->text('game_link')->nullable();
-            $table->year('year');
+            $table->date('release_date');
             $table->string('genre', 50);
             $table->string('dev', 100);
             $table->text('dev_link')->nullable();
