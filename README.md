@@ -22,5 +22,3 @@ DATABASE VIDEOGAME TABLE INFO:
 
 
    
-   
-   
