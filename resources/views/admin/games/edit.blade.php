@@ -34,8 +34,8 @@
                     placeholder="Insert Game's Genre">
             </div>
             <div class="mb-3">
-                <label for="year" class="form-label">Game's Year</label>
-                <input type="text" class="form-control" id="year" name="year" value="{{old("year",$game->year)}}"
+                <label for="release_date" class="form-label">Game's Year</label>
+                <input type="text" class="form-control" id="release_date" name="release_date" value="{{old("year",$game->release_date)}}"
                     placeholder="Insert Game's Year">
             </div>
 

@@ -81,7 +81,10 @@ class GameController extends Controller
      */
     public function update(GameRequest $request, Game $game)
     {
-        $game->update(compact('request'));
+        $data = $request->validate();
+
+        $game->update($data);
+
         return to_route('admin.games.index');
     }
 
