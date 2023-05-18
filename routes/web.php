@@ -26,7 +26,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::resource('games',GameController::class);
 
-    Route::get('/dashboard', function() {
+    Route::get('/', function() {
         return view('dashboard');
     })->name('dashboard');
 });
