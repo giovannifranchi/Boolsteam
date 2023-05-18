@@ -22,7 +22,7 @@
                     <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.games.index')}}" class="btn btn-danger">Gamelist</a>
+                    <a class="nav-link" href="{{ route('admin.games.index')}}">Gamelist</a>
                 </li>
             </ul>
 
