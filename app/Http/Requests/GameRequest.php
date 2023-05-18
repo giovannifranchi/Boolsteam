@@ -25,17 +25,17 @@ class GameRequest extends FormRequest
     {
         return [
             'game'=>'required|max:255',
-            'thumb'=>'url',
-            'game_link'=>'url',
+            'thumb'=>'nullable|url',
+            'game_link'=>'nullable|url',
             'release_date'=>'required|date',
-            'gerne'=>'required|max:50|string',
+            'genre'=>'required|max:50|string',
             'dev'=>'required|max:50|string',
             'publisher'=> 'required|max:255|string',
             'platform'=>'required|max:30|string',
-            'desription'=>'stirng',
-            'score'=>'numeric',
-            'review'=>'string',
-            'pegi'=>'numeric',
+            'description'=>'nullable|string',
+            'score'=>'nullable|numeric',
+            'review'=>'nullable|string',
+            'pegi'=>'required|numeric',
 
         ];
     }

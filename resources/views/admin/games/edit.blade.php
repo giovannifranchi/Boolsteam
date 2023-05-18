@@ -1,9 +1,9 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('page.main')
 
     <div class="container">
-        <a href="{{route('games.index')}}" class="btn btn-danger">Back to the list</a>
+        <a href="{{route('admin.games.index')}}" class="btn btn-danger">Back to the list</a>
         <div>
             @if ($errors->any())
             <div class="alert alert-danger">
@@ -15,7 +15,7 @@
             </div>
             @endif
         </div>
-        <form action="{{ route('games.update', $game->id) }}" method="POST">
+        <form action="{{ route('admin.games.update', $game->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="mb-3">
@@ -34,8 +34,8 @@
                     placeholder="Insert Game's Genre">
             </div>
             <div class="mb-3">
-                <label for="year" class="form-label">Game's Year</label>
-                <input type="text" class="form-control" id="year" name="year" value="{{old("year",$game->year)}}"
+                <label for="release_date" class="form-label">Game's Year</label>
+                <input type="text" class="form-control" id="release_date" name="release_date" value="{{old("year",$game->release_date)}}"
                     placeholder="Insert Game's Year">
             </div>
 

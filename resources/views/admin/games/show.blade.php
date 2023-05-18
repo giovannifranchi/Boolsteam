@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('page.main')
 <div class="container">
@@ -15,7 +15,7 @@
         <p class="card-text">{{$game->score}}</p>
         <p class="card-text">{{$game->review}}</p>
         <p class="card-text">{{$game->pegi}}</p>
-        <a href="{{route('games.index')}}" class="btn btn-success">Back to the list</a>
+        <a href="{{route('admin.games.index')}}" class="btn btn-success">Back to the list</a>
     </div>
 </div>
 
