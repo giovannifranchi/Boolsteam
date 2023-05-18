@@ -40,7 +40,7 @@ class GameController extends Controller
      */
     public function store(GameRequest $request)
     {
-        $data = $request->validate();
+        $data = $request->validated();
 
         $newGames = new Game();
 
@@ -81,7 +81,8 @@ class GameController extends Controller
      */
     public function update(GameRequest $request, Game $game)
     {
-        $data = $request->validate();
+    
+        $data = $request->validated();
 
         $game->update($data);
 
