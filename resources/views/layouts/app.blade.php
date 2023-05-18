@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    @include('layouts.partials.nav')
     @yield('page.main')
 </body>
 

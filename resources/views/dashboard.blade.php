@@ -13,7 +13,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <a href="{{ route('admin.games.index')}}" class="btn btn-danger">barbagg</a>
+                    <a href="{{ route('admin.games.index')}}" class="btn btn-danger">Gamelist</a>
                 </div>
             </div>
         </div>

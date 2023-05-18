@@ -22,7 +22,7 @@
                     <tr>
                         <td>{{ $game->game }}</td>
                         <td>{{ $game->genre }}</td>
-                        <td>{{ $game->year }}</td>
+                        <td>{{ $game->release_date }}</td>
                         <td>{{ $game->platform }}</td>
                         <td><a href="{{ route('admin.games.show', $game->id) }}" role="button" class="btn btn-success">Info</a></td>
                         <td><a href="{{ route('admin.games.edit', $game->id) }}" role="button" class="btn btn-warning">Edit</a></td>

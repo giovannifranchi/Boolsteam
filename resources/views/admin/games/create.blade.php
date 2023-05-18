@@ -31,8 +31,8 @@
                 <input type="text" class="form-control" id="genre" name="genre" placeholder="Insert Game's Genre" value="{{old("genre")}}">
             </div>
             <div class="mb-3">
-                <label for="year" class="form-label">Game's Year</label>
-                <input type="text" class="form-control" id="year" name="year" placeholder="Insert Game's Year" value="{{old("year")}}">
+                <label for="release_date" class="form-label">Game's release_date</label>
+                <input type="text" class="form-control" id="release_date" name="release_date" placeholder="Insert Game's Year" value="{{old("release_date")}}">
             </div>
             <div class="mb-3">
                 <label for="dev_link" class="form-label">Developer's Link</label>
