@@ -20,7 +20,7 @@ Route::get('/', function () { // da sloggato ti trovi qui
 
 Route::get('/dashboard', function () {  //appena loggi vieni reind qui
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->prefix('admin')->name('dashboard');
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('games',GameController::class);

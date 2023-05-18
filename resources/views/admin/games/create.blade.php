@@ -3,7 +3,7 @@
 @section('page.main')
 
     <div class="container">
-        <a href="{{ 'admin.games.index' }}" class="btn btn-danger">Back to the list</a>
+        <a href="{{ route('admin.games.index') }}" class="btn btn-danger">Back to the list</a>
         <div>
             @if ($errors->any())
                 <div class="alert alert-danger">
