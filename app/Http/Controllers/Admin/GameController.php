@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\GameRequest;
 use App\Models\Game;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 
 class GameController extends Controller
@@ -41,9 +42,8 @@ class GameController extends Controller
     public function store(GameRequest $request)
     {
         $data = $request->validated();
-
         $newGames = new Game();
-
+        $newGames->slug = Str::slug($data['game']);
         $newGames->fill($data);
         $newGames->save();
 
@@ -83,7 +83,7 @@ class GameController extends Controller
     {
     
         $data = $request->validated();
-
+        $game->slug = Str::slug($data['game']);
         $game->update($data);
 
         return to_route('admin.games.index');
