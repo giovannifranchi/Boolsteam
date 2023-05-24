@@ -14,5 +14,10 @@ class Game extends Model
     {
        return 'slug';
     }
+
+    public function developers()
+    {
+        return $this->belongsToMany(Developer::class);
+    }
 }
 
