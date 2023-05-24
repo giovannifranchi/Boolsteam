@@ -15,8 +15,13 @@ class Game extends Model
        return 'slug';
     }
 
+
     public function genre(){
         return $this->belongsTo(Genre::class);
+
+    public function review(){
+        return $this->hasOne(Review::class);
+
     }
 }
 
