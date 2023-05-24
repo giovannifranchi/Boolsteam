@@ -15,7 +15,7 @@
                 </div>
             @endif
         </div>
-        <form action="{{ route('admin.games.store') }}" method="POST">
+        <form action="{{ route('admin.games.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="thumb" class="form-label">Image of the Game</label>
@@ -26,24 +26,24 @@
                 <label for="game" class="form-label">Title of the game</label>
                 <input type="text" class="form-control" id="game" name="game" placeholder="Insert Game Title" value="{{old("game")}}">
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="genre" class="form-label">Game's Genre</label>
                 <input type="text" class="form-control" id="genre" name="genre" placeholder="Insert Game's Genre" value="{{old("genre")}}">
-            </div>
+            </div> --}}
             <div class="mb-3">
                 <label for="release_date" class="form-label">Game's release_date</label>
-                <input type="text" class="form-control" id="release_date" name="release_date" placeholder="Insert Game's Year" value="{{old("release_date")}}">
+                <input type="date" class="form-control" id="release_date" name="release_date" placeholder="Insert Game's Year" value="{{old("release_date")}}">
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="dev_link" class="form-label">Developer's Link</label>
                 <input type="text" class="form-control" id="dev_link" name="dev_link"
                     placeholder="Insert Developer Link" value="{{old("dev_link")}}">
-            </div>
-            <div class="mb-3">
+            </div> --}}
+            {{-- <div class="mb-3">
                 <label for="dev" class="form-label">Developer's Name</label>
                 <input type="text" class="form-control" id="dev" name="dev"
                     placeholder="Insert Developer Name" value="{{old("dev")}}">
-            </div>
+            </div> --}}
             <div class="mb-3">
                 <label for="publisher_link" class="form-label">Publisher's Link</label>
                 <input type="text" class="form-control" id="publisher_link" name="publisher_link"
@@ -83,6 +83,10 @@
                 <label for="pegi" class="form-label">Game's Pegi</label>
                 <input type="text" class="form-control" id="pegi" name="pegi"
                     placeholder="Insert Game's Pegi" value="{{old("pegi")}}">
+            </div>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Default file input example</label>
+                <input class="form-control" type="file" id="formFile" name="image">
             </div>
             <button type="submit" class="btn btn-success">Create</button>
         </form>

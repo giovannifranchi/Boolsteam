@@ -26,10 +26,9 @@ class GameRequest extends FormRequest
         return [
             'game'=>'required|max:255',
             'thumb'=>'nullable|url',
+            'image'=>'nullable|image|max:2048',
             'game_link'=>'nullable|url',
             'release_date'=>'required|date',
-            'genre'=>'required|max:50|string',
-            'dev'=>'required|max:50|string',
             'publisher'=> 'required|max:255|string',
             'platform'=>'required|max:30|string',
             'description'=>'nullable|string',

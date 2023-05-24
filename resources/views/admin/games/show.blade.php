@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
+
+
 @section('page.main')
 <div class="container">
 <div class="card">
-    <img class="card-img-top" src="{{$game->thumb}}" alt="...">
+    <img class="card-img-top w-25" src="@if(Str::startsWith($game->thumb,'http')){{$game->thumb}}@else {{asset('storage/'.$game->thumb)}} @endif" alt="...">
     <div class="card-body">
         <a href="{{$game->game_link}}"><h5 class="card-title">{{$game->game}}</h5></a>
         <p class="card-text">{{$game->genre}}</p>
