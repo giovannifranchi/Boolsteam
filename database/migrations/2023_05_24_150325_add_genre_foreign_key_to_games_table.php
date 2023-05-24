@@ -14,12 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::table('games', function (Blueprint $table) {
-            $table->unsignedBigInteger('games_id')->after('id')->nullable();
+            $table->unsignedBigInteger('games_id')->nullable()->after('id');
 
             $table->foreign('games_id')
             ->references('id')
-            ->on('genre')
+            ->on('genres')
             ->nullOnDelete();
+
         });
     }
 
