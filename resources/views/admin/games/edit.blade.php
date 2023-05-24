@@ -92,7 +92,7 @@
             <div class="thumb-input-wrapper">
                 <div class="mb-3  @if(!Str::startsWith($game->thumb, 'http')) d-block @else d-none @endif" id="link-input">
                     <label for="image" class="form-label">Image File</label>
-                    <input class="form-control" type="file" id="image" name="image">
+                    <input class="form-control" type="file" id="image" name="image" value="ciao">
                 </div>
                 <div class="mb-3 @if(Str::startsWith($game->thumb, 'http')) d-block @else d-none @endif" id="link-file">
                     <label for="thumb" class="form-label">Image Link</label>
