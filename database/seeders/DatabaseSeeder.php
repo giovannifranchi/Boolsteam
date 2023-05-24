@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([DeveloperSeeder::class, GamesTableSeeder::class]);
+        $this->call([DeveloperSeeder::class,GenreSeeder::class,ReviewsTableSeeder::class ,GamesTableSeeder::class]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
