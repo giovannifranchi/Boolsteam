@@ -7,6 +7,7 @@ use App\Http\Requests\GameRequest;
 use App\Models\Game;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 
@@ -44,9 +45,18 @@ class GameController extends Controller
     public function store(GameRequest $request)
     {
         $data = $request->validated();
+        //dd($data);
         $newGames = new Game();
-        $newGames->slug = Str::slug($data['game']);
         $newGames->fill($data);
+        $newGames->slug = Str::slug($data['game']);
+        if(isset($data['thumb'])){
+            $newGames->thumb = $data['thumb'];
+        }elseif(isset($data['image'])){
+           $newGames->thumb = Storage::put('uploads/images/thumbs', $data['image']);
+        }
+
+
+        
         $newGames->save();
 
         return to_route('admin.games.index');
