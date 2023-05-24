@@ -15,31 +15,26 @@
             </div>
             @endif
         </div>
-        <form action="{{ route('admin.games.update', $game) }}" method="POST">
+        <form action="{{ route('admin.games.update', $game) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="mb-3">
-                <label for="thumb" class="form-label">Image of the Game</label>
-                <input type="text" class="form-control" id="thumb" name="thumb" value="{{old("thumb",$game->thumb)}}"
-                    placeholder="Insert the path of game's image">
-            </div>
             <div class="mb-3">
                 <label for="game" class="form-label">Title of the game</label>
                 <input type="text" class="form-control" id="game" name="game" value="{{old("game",$game->game)}}"
                     placeholder="Insert Game Title">
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="genre" class="form-label">Game's Genre</label>
                 <input type="text" class="form-control" id="genre" name="genre" value="{{old("genre",$game->genre)}}"
                     placeholder="Insert Game's Genre">
-            </div>
+            </div> --}}
             <div class="mb-3">
                 <label for="release_date" class="form-label">Game's Year</label>
-                <input type="text" class="form-control" id="release_date" name="release_date" value="{{old("year",$game->release_date)}}"
+                <input type="date" class="form-control" id="release_date" name="release_date" value="{{old("year",$game->release_date)}}"
                     placeholder="Insert Game's Year">
             </div>
 
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label for="dev_link" class="form-label">Developer's Link</label>
                 <input type="text" class="form-control" id="dev_link" name="dev_link" value="{{old("dev_link",$game->dev_link)}}"
                     placeholder="Insert Developer Link">
@@ -48,7 +43,7 @@
                 <label for="dev" class="form-label">Developer's Name</label>
                 <input type="text" class="form-control" id="dev" name="dev" value="{{old("dev",$game->dev)}}"
                     placeholder="Insert Developer Name">
-            </div>
+            </div> --}}
             <div class="mb-3">
                 <label for="publisher_link" class="form-label">Publisher's Link</label>
                 <input type="text" class="form-control" id="publisher_link" name="publisher_link"
@@ -87,6 +82,23 @@
             <div class="mb-3">
                 <label for="pegi" class="form-label">Game's Pegi</label>
                 <input type="text" class="form-control" id="pegi" name="pegi" value="{{old("pegi",$game->pegi)}}">
+            </div>
+
+            {{-- image handler --}}
+            <div class="form-check form-switch mb-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="image-handler" @checked(!Str::startsWith($game->thumb, 'http'))>
+                <label class="form-check-label" for="image-handler">Upload File</label>
+            </div>
+            <div class="thumb-input-wrapper">
+                <div class="mb-3  @if(!Str::startsWith($game->thumb, 'http')) d-block @else d-none @endif" id="link-input">
+                    <label for="image" class="form-label">Image File</label>
+                    <input class="form-control" type="file" id="image" name="image">
+                </div>
+                <div class="mb-3 @if(Str::startsWith($game->thumb, 'http')) d-block @else d-none @endif" id="link-file">
+                    <label for="thumb" class="form-label">Image Link</label>
+                    <input type="text" class="form-control" id="thumb" name="thumb"
+                        placeholder="Insert the path of game's image" @if(Str::startsWith($game->thumb, 'http')) value="{{ old('thumb', $game->thumb) }}"@endif>
+                </div>
             </div>
             <button type="submit" class="btn btn-success">Edit</button>
         </form>
