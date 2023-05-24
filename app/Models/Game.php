@@ -14,5 +14,8 @@ class Game extends Model
     {
        return 'slug';
     }
+    public function review(){
+        return $this->hasOne(Review::class);
+    }
 }
 

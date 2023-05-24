@@ -1,16 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use App\Http\Controllers\Controller;
-use App\Http\Requests\GameRequest;
+use App\Http\Requests\StoreReviewRequest;
+use App\Http\Requests\UpdateReviewRequest;
 use App\Models\Game;
 use App\Models\Review;
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
-
-class GameController extends Controller
+class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,10 +16,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::all();
-        $reviews = Review::all();
-
-        return view('admin.games.index', compact('games','reviews'));
+        //
     }
 
     /**
@@ -32,7 +26,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('admin.games.create');
+        //
     }
 
     /**
@@ -41,15 +35,9 @@ class GameController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GameRequest $request)
+    public function store(StoreReviewRequest $request)
     {
-        $data = $request->validated();
-        $newGames = new Game();
-        $newGames->slug = Str::slug($data['game']);
-        $newGames->fill($data);
-        $newGames->save();
-
-        return to_route('admin.games.index');
+        //
     }
 
     /**
@@ -58,9 +46,9 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $game)
+    public function show($id)
     {
-        return view('admin.games.show', compact('game'));
+        //
     }
 
     /**
@@ -69,9 +57,9 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Game $game)
+    public function edit($id)
     {
-        return view('admin.games.edit', compact('game'));
+        //
     }
 
     /**
@@ -81,14 +69,9 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(GameRequest $request, Game $game)
+    public function update(UpdateReviewRequest $request, $id)
     {
-    
-        $data = $request->validated();
-        $game->slug = Str::slug($data['game']);
-        $game->update($data);
-
-        return to_route('admin.games.index');
+        //
     }
 
     /**
@@ -97,9 +80,8 @@ class GameController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Game $game)
+    public function destroy($id)
     {
-        $game->delete();
-        return to_route('admin.games.index');
+        //
     }
 }
