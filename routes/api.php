@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('games', [GameController::class, 'games']);
+Route::get('highlighted', [GameController::class, 'highlighted']);
+Route::get('discount', [GameController::class, 'discount']);

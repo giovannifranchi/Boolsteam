@@ -15,4 +15,20 @@ class GameController extends Controller
 // dd($games);
         return response()->json($games);
     }
+
+    public function highlighted()
+    {
+        
+        $highlighted = Game::where('highlight', true)->with('genres', 'developers')->first();
+
+        return response()->json($highlighted);
+    }
+
+    public function discount()
+    {
+        
+        $gamesDiscounted = Game::with('genres', 'developers')->orderBy('discount')->take(3)->get();
+        
+        return response()->json($gamesDiscounted);
+    }
 }
