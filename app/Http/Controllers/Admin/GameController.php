@@ -98,12 +98,17 @@ class GameController extends Controller
         
         $game->slug = Str::slug($data['game']);
         
+        
         $oldHighlight = Game::where('highlight', 1)->first();
 
+        
         if($oldHighlight)
         {
-            $oldHighlight->highlight = 0;
-            $oldHighlight->update();
+            if($oldHighlight->id !== $game->id)
+            {
+                $oldHighlight->highlight = 0;
+                $oldHighlight->update();
+            }
         }
 
         $game->highlight = $request['highlight'] ? 1 : 0;
