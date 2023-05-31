@@ -38,10 +38,13 @@ class GamesTableSeeder extends Seeder
             $newGame->release_date = $game['release_date'];
             $newGame->slug = Str::slug($newGame->game, '-');
             
-            $genre = Genre::inRandomOrder()->first();
-            $newGame->games_id= $genre->id;
+            // $newGame->games_id= $genre->id;
 
             $newGame->save();
+
+
+            $genre = Genre::inRandomOrder()->take(3);
+            $newGame->genres()->attach($genre->id);
 
             
             $developer = Developer::inRandomOrder()->first();
