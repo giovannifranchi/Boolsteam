@@ -15,7 +15,8 @@
                 <th>Date</th>
                 <th>Platform</th>
                 <th colspan="4">Slug</th>
-                <th>highlighted</th>
+                <th>Highlighted</th>
+                <th>Discount</th>
             </tr>
             <!--/Thead-->
 
@@ -35,6 +36,7 @@
                             </ul>
                         </td>
                         <td>{{ $game->price }} €</td>
+                        <td>{{ $game->discount }} %</td>
                         <td>{{ $game->release_date }}</td>
                         <td>{{ $game->platform }}</td>
                         <td>{{ $game->slug }}</td>
