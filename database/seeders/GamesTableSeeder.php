@@ -45,9 +45,15 @@ class GamesTableSeeder extends Seeder
             $newGame->save();
 
 
-            $genre = Genre::inRandomOrder()->take(3)->get();
-            // dd($genre);
-            $newGame->genres()->attach($genre[0]->id);
+            $genres = Genre::inRandomOrder()->take(3)->get();
+            
+            $idRand = [];
+            foreach($genres as $genre )
+            {
+                array_push($idRand, $genre->id);
+            }
+            
+            $newGame->genres()->attach($idRand);
 
             
             $developer = Developer::inRandomOrder()->first();
