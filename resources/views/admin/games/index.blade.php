@@ -22,6 +22,7 @@
             @foreach ($games as $game)
                 <tbody>
                     <tr>
+
                         <td>{{ $game->game }}</td>
                         <td>{{ $game->genre }}</td>
                         <td>{{ $game->release_date }}</td>

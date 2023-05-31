@@ -29,6 +29,6 @@ class GameController extends Controller
         
         $gamesDiscounted = Game::with('genres', 'developers')->orderBy('discount')->take(3)->get();
         
-        return response()->json($gamesDiscounted);
+        return response()->json($gamesDiscounted ?? null);
     }
 }
