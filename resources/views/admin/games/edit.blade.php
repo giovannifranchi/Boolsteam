@@ -70,6 +70,11 @@
                     placeholder="Insert Game's description">
             </div>
             <div class="mb-3">
+                <label for="price" class="form-label">Game's price</label>
+                <input type="text" class="form-control" id="price" name="price" value="{{ old("price",$game->price) }}" 
+                    placeholder="Insert Game's price">
+            </div>
+            <div class="mb-3">
                 <label for="score" class="form-label">Game's score</label>
                 <input type="text" class="form-control" id="score" name="score" value="{{old("score",$game->score)}}"
                     placeholder="Insert Game's score">

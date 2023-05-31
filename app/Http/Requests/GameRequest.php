@@ -32,6 +32,7 @@ class GameRequest extends FormRequest
             'publisher'=> 'required|max:255|string',
             'platform'=>'required|max:30|string',
             'description'=>'nullable|string',
+            'price'=>'required|numeric',
             'score'=>'nullable|numeric',
             'review'=>'nullable|string',
             'pegi'=>'required|numeric',
