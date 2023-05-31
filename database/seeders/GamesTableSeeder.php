@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Game;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class GamesTableSeeder extends Seeder
 {
@@ -30,6 +31,7 @@ class GamesTableSeeder extends Seeder
             $newGame->publisher = $game['publisher'];
             $newGame->dev = $game['developer'];
             $newGame->release_date = $game['release_date'];
+            $newGame->slug = Str::slug($newGame->game, '-');
 
             $newGame->save();
         }

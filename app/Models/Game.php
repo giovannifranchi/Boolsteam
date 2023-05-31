@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['slug', 'thumb'];
+    public function getRouteKeyName()
+    {
+       return 'slug';
+    }
 }
+
