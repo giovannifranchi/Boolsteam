@@ -12,6 +12,7 @@ class Genre extends Model
     // public function games(){
     //     return $this->hasMany(Game::class);
     // }
+    protected $guarded=[''];
 
     public function games() {
         return $this->belongsToMany('App\Models\Game');
