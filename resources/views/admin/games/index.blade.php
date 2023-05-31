@@ -5,6 +5,7 @@
         <h1>Boolsteam</h1>
         <a href="{{ route('admin.games.create') }}" role="button" class="btn btn-primary">Add game</a>
         <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary">Back To Dashboard</a>
+        <a href="{{ route('admin.genres.index') }}" class="btn btn-warning">Go to Genres</a>
 
         <table class="table">
             <!--Thead-->
