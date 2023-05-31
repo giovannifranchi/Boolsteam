@@ -97,7 +97,7 @@ class GameController extends Controller
         $data = $request->validated();
         $game->slug = Str::slug($data['game']);
         $game->update($data);
-
+        //dd($game);
         return to_route('admin.games.index');
     }
 
