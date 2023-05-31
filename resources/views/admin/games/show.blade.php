@@ -14,6 +14,7 @@
         <a href="{{$game->publisher_link}}"><p class="card-text">{{$game->publisher}}</p></a>
         <a href="{{$game->platform_link}}"><p class="card-text">{{$game->platform}}</p></a>
         <p class="card-text">{{$game->description}}</p>
+        <p class="card-text">{{$game->price}}</p>
         <p class="card-text">{{$game->score}}</p>
         <p class="card-text">{{$game->review}}</p>
         <p class="card-text">{{$game->pegi}}</p>

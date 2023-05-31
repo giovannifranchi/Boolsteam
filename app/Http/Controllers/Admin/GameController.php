@@ -110,7 +110,7 @@ class GameController extends Controller
 
 
         $game->update($data);
-
+        //dd($game);
         return to_route('admin.games.index');
     }
 

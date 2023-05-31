@@ -35,6 +35,7 @@
             placeholder="Insert Game's Year">
         </div>
 
+
         {{-- <div class="mb-3">
             <label for="dev_link" class="form-label">Developer's Link</label>
             <input type="text" class="form-control" id="dev_link" name="dev_link" value="{{old("
@@ -88,6 +89,62 @@
             <label for="pegi" class="form-label">Game's Pegi</label>
             <input type="text" class="form-control" id="pegi" name="pegi" value="{{old(" pegi",$game->pegi)}}">
         </div>
+
+            {{-- <div class="mb-3">
+                <label for="dev_link" class="form-label">Developer's Link</label>
+                <input type="text" class="form-control" id="dev_link" name="dev_link" value="{{old("dev_link",$game->dev_link)}}"
+                    placeholder="Insert Developer Link">
+            </div>
+            <div class="mb-3">
+                <label for="dev" class="form-label">Developer's Name</label>
+                <input type="text" class="form-control" id="dev" name="dev" value="{{old("dev",$game->dev)}}"
+                    placeholder="Insert Developer Name">
+            </div> --}}
+            <div class="mb-3">
+                <label for="publisher_link" class="form-label">Publisher's Link</label>
+                <input type="text" class="form-control" id="publisher_link" name="publisher_link"
+                value="{{old("publisher_link",$game->publisher_link)}}" placeholder="Insert Publisher link">
+            </div>
+            <div class="mb-3">
+                <label for="publisher" class="form-label">Publisher's Name</label>
+                <input type="text" class="form-control" id="publisher" name="publisher" value="{{old("publisher",$game->publisher)}}"
+                    placeholder="Insert Publisher Name">
+            </div>
+            <div class="mb-3">
+                <label for="platform_link" class="form-label">Platform's Link</label>
+                <input type="text" class="form-control" id="platform_link" name="platform_link"
+                value="{{old("platform_link",$game->platform_link)}}" placeholder="Insert Platform Link">
+            </div>
+            <div class="mb-3">
+                <label for="platform" class="form-label">Platform's Name</label>
+                <input type="text" class="form-control" id="platform" name="platform" value="{{old("platform",$game->platform)}}"
+                    placeholder="Insert Platform Name">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Game's Description</label>
+                <input type="text" class="form-control" id="description" name="description" value="{{old("description",$game->description)}}"
+                    placeholder="Insert Game's description">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Game's price</label>
+                <input type="text" class="form-control" id="price" name="price" value="{{ old("price",$game->price) }}" 
+                    placeholder="Insert Game's price">
+            </div>
+            <div class="mb-3">
+                <label for="score" class="form-label">Game's score</label>
+                <input type="text" class="form-control" id="score" name="score" value="{{old("score",$game->score)}}"
+                    placeholder="Insert Game's score">
+            </div>
+            <div class="mb-3">
+                <label for="review" class="form-label">Game's Review</label>
+                <input type="text" class="form-control" id="review" name="review" value="{{old("review",$game->review)}}"
+                    placeholder="Insert Game's review">
+            </div>
+            <div class="mb-3">
+                <label for="pegi" class="form-label">Game's Pegi</label>
+                <input type="text" class="form-control" id="pegi" name="pegi" value="{{old("pegi",$game->pegi)}}">
+            </div>
+
 
         {{-- image handler --}}
         <div class="form-check form-switch mb-3">
