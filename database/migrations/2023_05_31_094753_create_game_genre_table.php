@@ -14,6 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('game_genre', function (Blueprint $table) {
+
+            $table->unsignedBigInteger('genre_id');
+            $table->foreign('genre_id')->references('id')->on('genres')->cascadeOnDelete();
+
+            $table->unsignedBigInteger('game_id');
+            $table->foreign('game_id')->references('id')->on('games')->cascadeOnDelete();
+
             $table->id();
             $table->timestamps();
         });
