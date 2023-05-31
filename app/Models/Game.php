@@ -15,6 +15,9 @@ class Game extends Model
        return 'slug';
     }
 
+    public function genres() {
+        return $this->belongsToMany('App\Models\Genre');
+    }
 
     public function developers()
     {
