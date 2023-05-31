@@ -15,6 +15,7 @@
                 <th>Date</th>
                 <th>Platform</th>
                 <th colspan="4">Slug</th>
+                <th>highlighted</th>
             </tr>
             <!--/Thead-->
 
@@ -32,7 +33,7 @@
                                 @endforelse
                             </ul>
                         </td>
-                        <td>{{$game->price}} €</td>
+                        <td>{{ $game->price }} €</td>
                         <td>{{ $game->release_date }}</td>
                         <td>{{ $game->platform }}</td>
                         <td>{{ $game->slug }}</td>
@@ -47,6 +48,17 @@
 
                                 <input id='alert' type="submit" value="Delete" class="btn btn-danger">
                             </form>
+                        </td>
+                        <td>
+                            @if ($game->highlight == true)
+                                <div class="p-1 bg-success rounded-2 text-center align-middle">
+                                    <i class="fa-solid fa-check text-light"></i>
+                                </div>
+                            @elseif ($game->highlight == false)
+                                <div class="p-1 bg-danger rounded-2 text-center align-middle">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            @endif
                         </td>
                     </tr>
                 </tbody>
