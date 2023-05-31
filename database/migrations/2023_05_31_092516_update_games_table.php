@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('games', function(Blueprint $table){
-            // $table->dropForeign(['games_id']);
-            // $table->dropColumn('games_id');
+            $table->dropForeign(['games_id']);
+            $table->dropColumn('games_id');
             $table->float('price',5,2)->after('game_link');
             $table->boolean('highlight')->default(false);
             $table->unsignedTinyInteger('discount')->default(0);
