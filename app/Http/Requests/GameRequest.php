@@ -33,6 +33,7 @@ class GameRequest extends FormRequest
             'platform'=>'required|max:30|string',
             'description'=>'nullable|string',
             'price'=>'required|numeric',
+            'discount'=>'nullable|numeric',
             'score'=>'nullable|numeric',
             'review'=>'nullable|string',
             'pegi'=>'required|numeric',
