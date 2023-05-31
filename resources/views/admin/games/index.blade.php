@@ -13,11 +13,12 @@
                 <th>Title</th>
                 <th>Genre</th>
                 <th>Price</th>
+                <th>Discount</th>
                 <th>Date</th>
                 <th>Platform</th>
                 <th colspan="4">Slug</th>
                 <th>Highlighted</th>
-                <th>Discount</th>
+                
             </tr>
             <!--/Thead-->
 
