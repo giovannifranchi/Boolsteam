@@ -23,6 +23,7 @@
             @foreach ($games as $game)
                 <tbody>
                     <tr>
+
                         <td>{{ $game->game }}</td>
                         <td>
                             <ul class="list-unstyled">

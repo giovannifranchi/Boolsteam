@@ -21,6 +21,7 @@
         @foreach ($game->developers as $developer)
         <div>Developer:</div>    
         <p>{{ $developer->name }}</p>
+        {{-- <div>HIGHLIGHTED</div> --}}
         @endforeach
         <a href="{{route('admin.games.index')}}" class="btn btn-success">Back to the list</a>
     </div>

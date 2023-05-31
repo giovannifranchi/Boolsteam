@@ -9,7 +9,7 @@ class Game extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['slug', 'thumb'];
+    protected $guarded = ['slug', 'thumb', 'highlight'];
     public function getRouteKeyName()
     {
        return 'slug';

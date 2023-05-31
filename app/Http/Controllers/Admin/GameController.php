@@ -95,7 +95,20 @@ class GameController extends Controller
     {
     
         $data = $request->validated();
+        
         $game->slug = Str::slug($data['game']);
+        
+        $oldHighlight = Game::where('highlight', 1)->first();
+
+        if($oldHighlight)
+        {
+            $oldHighlight->highlight = 0;
+            $oldHighlight->update();
+        }
+
+        $game->highlight = $request['highlight'] ? 1 : 0;
+
+
         $game->update($data);
         //dd($game);
         return to_route('admin.games.index');
