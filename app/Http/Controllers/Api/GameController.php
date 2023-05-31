@@ -19,8 +19,16 @@ class GameController extends Controller
     public function highlighted()
     {
         
-        $games = Game::where('highlight', true)->with('genres', 'developers')->first();
+        $highlighted = Game::where('highlight', true)->with('genres', 'developers')->first();
+
+        return response()->json($highlighted);
+    }
+
+    public function discount()
+    {
         
-        return response()->json($games);
+        $gamesDiscounted = Game::with('genres', 'developers')->orderBy('discount')->take(3)->get();
+        
+        return response()->json($gamesDiscounted);
     }
 }
