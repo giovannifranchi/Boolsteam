@@ -101,21 +101,24 @@ class GameController extends Controller
         
         $oldHighlight = Game::where('highlight', 1)->first();
 
-        
-        if($oldHighlight)
+        if($game->highlight === 1 AND !isset($request['highlight']))
         {
-            if($oldHighlight->id !== $game->id)
+            $game->highlight = 0;
+        }
+
+        if($game->highlight === 0 AND isset($request['highlight']))
+        {
+            $game->highlight = 1;
+            if($oldHighlight)
             {
                 $oldHighlight->highlight = 0;
                 $oldHighlight->update();
             }
         }
 
-        $game->highlight = $request['highlight'] ? 1 : 0;
-
 
         $game->update($data);
-        //dd($game);
+
         return to_route('admin.games.index');
     }
 
