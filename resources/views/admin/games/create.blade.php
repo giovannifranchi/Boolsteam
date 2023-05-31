@@ -72,6 +72,11 @@
                     value="{{ old('price') }}">
             </div>
             <div class="mb-3">
+                <label for="discount" class="form-label">Game's discount</label>
+                <input type="text" class="form-control" id="discount" name="discount" placeholder="Insert Game's discount"
+                    value="{{ old('discount') }}">
+            </div>
+            <div class="mb-3">
                 <label for="score" class="form-label">Game's score</label>
                 <input type="text" class="form-control" id="score" name="score" placeholder="Insert Game's score"
                     value="{{ old('score') }}">
