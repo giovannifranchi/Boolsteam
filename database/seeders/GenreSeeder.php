@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Type;
+use Illuminate\Support\Str;
 
 class GenreSeeder extends Seeder
 {
@@ -26,6 +27,7 @@ class GenreSeeder extends Seeder
         foreach ($genres as $genre){
             $newgenre = new Genre();
             $newgenre->name = $genre;
+            $newgenre->slug= Str::slug($newgenre->name,'-');
             $newgenre->save();
         }
     }
