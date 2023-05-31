@@ -23,9 +23,7 @@ class Game extends Model
     {
         return $this->belongsToMany(Developer::class);
     }
-    public function genre(){
-        return $this->belongsTo(Genre::class);
-    }
+
     public function review(){
         return $this->hasOne(Review::class);
     }
