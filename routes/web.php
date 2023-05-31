@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\GameController;
+use App\Http\Controllers\Admin\GenreController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,7 @@ Route::get('/', function () { // da sloggato ti trovi qui
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     Route::resource('games',GameController::class);
+    Route::resource('genres',GenreController::class);
 
     Route::get('/', function() {
         return view('dashboard');
